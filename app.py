@@ -151,7 +151,7 @@ def admin():
 
 @app.route('/user')
 def user():
-    return redirect(url_for('user')) 
+    return redirect(url_for('admin'))
 
 
 
