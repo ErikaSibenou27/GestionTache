@@ -1,4 +1,4 @@
-flask
-firebase-admin
-pyrebase4
-gunicorn
+Flask == 3.1.0
+firebase-admin == 6.6.0
+pyrebase4 == 4.8.0
+gunicorn == 23.0.0
