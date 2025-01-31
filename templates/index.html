@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur notre système de gestion de tâches</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <!-- Logo en haut à droite -->
+    <div class="logo">
+        <span class="sgt">SGT</span><span class="ache">ache</span>
+    </div>
+
+    <div class="container">
+        <h1>Bienvenue sur notre système de gestion de tâches</h1>
+        <!-- Lien pour rediriger vers la page d'enregistrement -->
+        <a href="{{ url_for('conn') }}" class="btn">Connexion</a>
+    </div>
+</body>
+</html>

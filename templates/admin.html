@@ -1,0 +1,68 @@
+<?php
+ require_once('../conect.php');
+// on verifie si la session de pass est bien active ou pas
+if (!$_SESSION['user_id']) {
+    header('location: ../connexionInscription.php');
+}
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Administrateur</title>
+    <link rel="stylesheet" href="../static/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="../static/boostrap//css//bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/nav.css">
+</head>
+
+<body>
+<nav class="cc-nav navbar nav-dark ">
+        <div class="container-fluid">
+            <!-- image du logo -->
+            
+            <!-- liste des element du  menue -->
+            <h1 class="fw-bolder"><i style="color: #120cef; font-size: 40px;  ">SGT</i><i style="color: white;">ache</i></h1>
+            <ul class="navbar-nav ms-auto mb-2lg-0">
+                <li><a style=" font-size: 25px; " href="{{ url_for('login') }}" class="btn btn-con"><i class='bx bx-log-in'> </i> DECONNEXION</a></li>
+            </ul>
+        </div>
+    </nav><br><br><br><br>
+    <div class="container my-5">
+        <h1 class="text-center mb-4"> Bienvenue sur votre page <strong>Administrateur</strong></h1>
+        </h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Gérer les Utilisateurs</h5>
+                        <p class="card-text">Ajouter, modifier ou supprimer des utilisateurs.</p>
+                        <a href="{{ url_for('gere_user') }}" class="btn btn-light">Gérer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-secondary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Gérer les projets</h5>
+                        <p class="card-text">Ajouter, modifier ou supprimer des utilisateurs.</p>
+                        <a href="{{ url_for('gere_projet') }}" class="btn btn-light">Gérer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Gérer les taches</h5>
+                        <p class="card-text">Ajouter, modifier ou supprimer des taches.</p>
+                        <a href="{{ url_for('gere_tache') }}" class="btn btn-light">Gérer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/boostrap//js//bootstrap.min.js"></script>
+</body>
+
+</html>

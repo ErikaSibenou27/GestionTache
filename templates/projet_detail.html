@@ -1,0 +1,24 @@
+<!-- projet_details.html -->
+<h2>{{ projet['nom'] }}</h2>
+<p>{{ projet['description'] }}</p>
+
+<form method="POST">
+    <div class="mb-3">
+        <label for="nom_projet" class="form-label">Nom du projet</label>
+        <input type="text" class="form-control" id="nom_projet" name="nom_projet" value="{{ projet['nom'] }}">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description">{{ projet['description'] }}</textarea>
+    </div>
+    <div class="mb-3">
+        <label for="tache" class="form-label">Tâches</label>
+        <input type="text" class="form-control" id="tache" name="tache" value="{{ projet['taches'] | join(',') }}">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+</form>
+
+<form method="POST" action="{{ url_for('delete_projet', id=projet['id']) }}">
+    <button type="submit" class="btn btn-danger">Supprimer le projet</button>
+</form>

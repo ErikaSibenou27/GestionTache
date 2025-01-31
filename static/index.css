@@ -1,0 +1,75 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('/static/img/image2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Utiliser toute la hauteur de la fenêtre */
+    margin: 0;
+    position: relative;
+}
+
+/* Styles du logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 48px; 
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+
+.sgt {
+    color: #007bff; 
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0px; /* Espacement entre les lettres */
+    text-transform: uppercase;
+}
+
+
+.ache {
+    color: white; 
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0px;
+    text-transform: lowercase; /* "ache" en minuscules */
+}
+
+
+.container {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    background: none;
+    border: none;
+}
+
+
+.container h1 {
+    font-size: 45px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    background-color: #007bff; 
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #0056b3; 
+}

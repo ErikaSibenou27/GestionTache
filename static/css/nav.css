@@ -1,0 +1,26 @@
+.fw-bolder {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-left: 35%;
+
+}
+
+.btn-con {
+    color: #f3940b;
+    border-color: #f3940b;
+    transition: 1s;
+}
+
+.btn-con:hover,
+.btn-con:active {
+    color: white;
+    background-color: #f3940b;
+}
+
+.cc-nav {
+    position: fixed;
+    top: 0;
+    background-color: #363663;
+    width: 100%;
+    z-index: 99;
+}

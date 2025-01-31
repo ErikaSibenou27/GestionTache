@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer les Taches</title>
+    <link rel="stylesheet" href="../static/boostrap/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .table thead th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-sm {
+            padding: 0.25rem 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <a href="{{ url_for('back_admin') }}" class="btn btn-danger btn-lg">Retour</a>
+        <h1 class="text-center mb-4">Gérer les Taches</h1>
+
+        <!-- Afficher les alertes -->
+        <div class="alert alert">
+        </div>
+
+        <!-- Formulaire pour ajouter un projet -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Ajouter une taches
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('edit_tache', tache_id=tache_id) }}" method="POST">
+                    <div class="mb-3">
+                        <label for="projet" class="form-label">Choisir le projet</label>
+                        <select name="projet_id" class="form-control" required>
+                            <option value="" disabled>Choix du projet</option>
+                            {% for projet_id, projet in projets.items() %}
+                            <option value="{{ projet_id }}" {% if projet_id==tache['projet_id'] %} selected {% endif %}>
+                                {{ projet['name'] }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom de la tâche</label>
+                        <input type="text" class="form-control" id="name" name="titre" value="{{ tache['name'] }}"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="description" name="description"
+                            value="{{ tache['description'] }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date de création</label>
+                        <input type="date" class="form-control" id="date" name="date" value="{{ tache['date'] }}"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="statut" class="form-label">Statut</label>
+                        <select name="statut" class="form-control" required>
+                            <option value="non terminer" {% if tache['statut']=='non terminer' %} selected {% endif %}>
+                                Non Terminer</option>
+                            <option value="en cour" {% if tache['statut']=='en cour' %} selected {% endif %}>En Cour
+                            </option>
+                            <option value="terminer" {% if tache['statut']=='terminer' %} selected {% endif %}>Terminer
+                            </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../static/boostrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
