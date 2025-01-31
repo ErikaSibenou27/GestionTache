@@ -151,7 +151,8 @@ def admin():
 
 @app.route('/user')
 def user():
-    return render_template('home.html')
+    return redirect(url_for('user')) 
+
 
 
 @app.route('/gere_user')
